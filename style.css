@@ -1,14 +1,35 @@
 body {
-  background-color:#fff;
-  padding: 2em;
+  background: url('./img/coffee-main-bckgr.jpg') center no-repeat fixed;
+  background-size: cover;
+  min-height: 30vh;
+  margin: 0;
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   color: #212121;
 }
 .container {
-  width: 80%;
+  background: url('./img/coffee-bckgr.jpg') center no-repeat ;
+  background-size: 100%;
+  padding: 60px 0;
+  width: 100%;
   margin: 0 auto;
 }
-
+#app-container {
+  min-height: 50vh;
+}
+.transactions {
+  min-height: 20vh;
+}
+.container h1, .container p{
+  padding: 20px 10px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.container h1 {
+  border-bottom: 1px solid #2d130d;
+  color: #2d130d;
+  font-size: 2.5em;
+  font-family: 'New Tegomin', serif;
+}
 
 .bold { 
   font-weight: bolder;
@@ -22,12 +43,11 @@ input {
 
 button {
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #773d1e;
     border: none;
     color: white;
-    background-color: #00BCD4;
     font-size: 16px;
-    padding: 16px 32px;
+    padding: 12px 18px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
@@ -37,21 +57,24 @@ button {
   background-color: white;
   color: #D1C4E9;
 }
-
+.transactions {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0 1.5em;
+  border-top: 1px solid #2d130d;
+  border-bottom: 20px solid #2d130d;
+}
 .ftc-intro {
-  background-color:#0097A7;
+  background-color:#9e6531;
   color:white;
   width:100%;
   padding:20px;
 }
 
 .form-group {
-  background-color:#0097A7;
   color:black;
-  width:50%;
-  padding:30px;
+  padding:20px;
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-color: #faf8f2;
 }
 
 .form-break {
@@ -63,4 +86,57 @@ button {
 
 .horizontal-rule {
   background-color:#BDBDBD;
+}
+
+.top-nav {
+  background-color:#f3eddb;
+  display: flex;
+  justify-content: space-around; 
+}
+.top-nav span {
+  text-align: center;
+  width: 100%;
+  padding: 0.8em;
+  cursor: pointer;
+}
+.top-nav .active {
+  cursor: default;
+  font-weight: bold;
+  background-color: #e6d8b8;
+  color: #2d130d;
+}
+.disabled {
+  color: grey;
+  cursor: not-allowed !important;
+}
+.split {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#overview {
+  padding:1.5em;
+}
+#data-html {
+  padding: 1.5em;
+}
+#data-html li{
+  font-size: 13px;
+}
+.material-icons {
+  padding: 13px 10px !important;
+  font-size: 20px !important;
+}
+
+@media only screen and (min-width: 900px) {
+  #data-html h5 {
+    font-size: 1.2em;
+    margin-bottom: 0.1em;
+  }
+  #data-html li {
+    font-size: 0.9em;
+  }
 }
