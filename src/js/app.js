@@ -113,7 +113,7 @@ App = {
 
     initSupplyChain: function () {
         /// Source the truffle compiled smart contracts
-        var jsonSupplyChain='/dapp-for-tracking-items-through-supply-chain/../../build/contracts/SupplyChain.json';
+        var jsonSupplyChain='../../dapp-for-tracking-items-through-supply-chain/build/contracts/SupplyChain.json';
         web3.eth.defaultAccount = web3.eth.accounts[0];
         
         /// JSONfy the smart contracts
