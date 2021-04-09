@@ -6,12 +6,12 @@ The contracts are deployed on Ethereum Rinkeby Testnet.
 
 ## Get started
 
-##### In order for this to run properly you need to have:
+#### In order for this to run properly you need to have:
 * Metamask extension or other eth wallet installed in your web browser,
 * Nodejs at least v12.16.1 installed on your computer,
 * Truffle at least v5.2.4 installed on your computer
 
-##### Follow this steps to run the app on your local machine:
+#### Follow this steps to run the app on your local machine:
 1. Open the terminal and run this commands:
 ```git clone https://github.com/JakaPresecnik/dapp-for-tracking-items-through-supply-chain.git
 cd dapp-for-tracking-items-through-supply-chain
@@ -26,7 +26,7 @@ migrate
 `npm run dev`
 When it is done the site should open up automatically, and metamask should open.
 
-##### To run through browser:
+#### To run through browser:
 [This is a link](https://jakapresecnik.github.io/dapp-for-tracking-items-through-supply-chain/) to a page built with github pages.
 You should switch the network in your metamask to *rinkeby testnet*.
 However you won't be able to interact with anything else but one functionallity, unless I give you roles.
