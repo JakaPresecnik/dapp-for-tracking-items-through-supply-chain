@@ -80,7 +80,7 @@
   "sourceMap": "165:1680:1:-;;;612:63;8:9:-1;5:2;;;30:1;27;20:12;5:2;612:63:1;642:27;658:10;642:15;;;:27;;;:::i;:::-;165:1680;;1470:126;1528:25;1545:7;1528:12;:16;;;;;;:25;;;;;:::i;:::-;1582:7;1565:25;;;;;;;;;;;;1470:126;:::o;258:172:4:-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;;;:18;;;:::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;760:173::-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;165:1680:1:-;;;;;;;",
   "deployedSourceMap": "165:1680:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1286:81;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1286:81:1;;;;;;1111:101;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1111:101:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;932:112;;8:9:-1;5:2;;;30:1;27;20:12;5:2;932:112:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1286:81;1331:30;1350:10;1331:18;:30::i;:::-;1286:81::o;1111:101::-;805:25;819:10;805:13;:25::i;:::-;797:56;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1182:24;1198:7;1182:15;:24::i;:::-;1111:101;:::o;932:112::-;993:4;1013:25;1030:7;1013:12;:16;;:25;;;;:::i;:::-;1006:32;;932:112;;;:::o;1708:134::-;1769:28;1789:7;1769:12;:19;;:28;;;;:::i;:::-;1828:7;1809:27;;;;;;;;;;;;1708:134;:::o;1470:126::-;1528:25;1545:7;1528:12;:16;;:25;;;;:::i;:::-;1582:7;1565:25;;;;;;;;;;;;1470:126;:::o;760:173:4:-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;501:175::-;596:1;577:21;;:7;:21;;;;569:30;;;;;;;;614:18;618:4;624:7;614:3;:18::i;:::-;606:27;;;;;;;;665:5;642:4;:11;;:20;654:7;642:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;501:175;;:::o;258:172::-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;:18::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o",
   "source": "pragma solidity ^0.4.24;\r\n\r\n// Import the library 'Roles'\r\nimport \"./Roles.sol\";\r\n\r\n// Define a contract 'DistributorRole' to manage this role - add, remove, check\r\ncontract DistributorRole {\r\n    using Roles for Roles.Role;\r\n\r\n  // Define 2 events, one for Adding, and other for Removing\r\n  event DistributorAdded(address indexed account);\r\n  event DistributorRemoved(address indexed account);\r\n\r\n  // Define a struct 'distributors' by inheriting from 'Roles' library, struct Role\r\n  Roles.Role private distributors;\r\n\r\n  // In the constructor make the address that deploys this contract the 1st distributor\r\n  constructor() public {\r\n      _addDistributor(msg.sender);\r\n  }\r\n\r\n  // Define a modifier that checks to see if msg.sender has the appropriate role\r\n  modifier onlyDistributor() {\r\n    require(isDistributor(msg.sender), \"Not a distributor!\");\r\n    _;\r\n  }\r\n\r\n  // Define a function 'isDistributor' to check this role\r\n  function isDistributor(address account) public view returns (bool) {\r\n    return distributors.has(account);\r\n  }\r\n\r\n  // Define a function 'addDistributor' that adds this role\r\n  function addDistributor(address account) public onlyDistributor {\r\n    _addDistributor(account);\r\n  }\r\n\r\n  // Define a function 'renounceDistributor' to renounce this role\r\n  function renounceDistributor() public {\r\n    _removeDistributor(msg.sender);\r\n  }\r\n\r\n  // Define an internal function '_addDistributor' to add this role, called by 'addDistributor'\r\n  function _addDistributor(address account) internal {\r\n    distributors.add(account);\r\n    emit DistributorAdded(account);\r\n  }\r\n\r\n  // Define an internal function '_removeDistributor' to remove this role, called by 'removeDistributor'\r\n  function _removeDistributor(address account) internal {\r\n    distributors.remove(account);\r\n    emit DistributorRemoved(account);\r\n  }\r\n}",
-  "sourcePath": "C:\\Users\\Jaka\\Documents\\GitHub\\dapp-for-tracking-items-through-supply-chain\\contracts\\coffeeaccesscontrol\\DistributorRole.sol",
+  "sourcePath": "C:/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/DistributorRole.sol",
   "ast": {
     "absolutePath": "/C/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/DistributorRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "658:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1365,
+                              "referencedDeclaration": 629,
                               "src": "819:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -481,10 +481,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1368,
-                        1369
+                        632,
+                        633
                       ],
-                      "referencedDeclaration": 1369,
+                      "referencedDeclaration": 633,
                       "src": "797:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -843,7 +843,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "1350:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1609,7 +1609,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1692,10 +1692,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1368,
-                                1369
+                                632,
+                                633
                               ],
-                              "referencedDeclaration": 1369,
+                              "referencedDeclaration": 633,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1755,7 +1755,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1365,
+                                      "referencedDeclaration": 629,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2239,7 +2239,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2746,7 +2746,7 @@
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-09T07:52:06.547Z",
+  "updatedAt": "2021-04-09T12:59:17.914Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

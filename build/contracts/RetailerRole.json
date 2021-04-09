@@ -80,7 +80,7 @@
   "sourceMap": "162:1590:3:-;;;593:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;593:58:3;621:24;634:10;621:12;;;:24;;;:::i;:::-;162:1590;;1401:117;1456:22;1470:7;1456:9;:13;;;;;;:22;;;;;:::i;:::-;1504:7;1490:22;;;;;;;;;;;;1401:117;:::o;258:172:4:-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;;;:18;;;:::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;760:173::-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;162:1590:3:-;;;;;;;",
   "deployedSourceMap": "162:1590:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;896:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;896:106:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1066:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1066:92:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;1229:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1229:75:3;;;;;;896:106;954:4;974:22;988:7;974:9;:13;;:22;;;;:::i;:::-;967:29;;896:106;;;:::o;1066:92::-;778:22;789:10;778;:22::i;:::-;770:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1131:21;1144:7;1131:12;:21::i;:::-;1066:92;:::o;1229:75::-;1271:27;1287:10;1271:15;:27::i;:::-;1229:75::o;760:173:4:-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;1401:117:3:-;1456:22;1470:7;1456:9;:13;;:22;;;;:::i;:::-;1504:7;1490:22;;;;;;;;;;;;1401:117;:::o;1624:125::-;1682:25;1699:7;1682:9;:16;;:25;;;;:::i;:::-;1735:7;1719:24;;;;;;;;;;;;1624:125;:::o;258:172:4:-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;:18::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;501:175::-;596:1;577:21;;:7;:21;;;;569:30;;;;;;;;614:18;618:4;624:7;614:3;:18::i;:::-;606:27;;;;;;;;665:5;642:4;:11;;:20;654:7;642:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;501:175;;:::o",
   "source": "pragma solidity ^0.4.24;\r\n\r\n// Import the library 'Roles'\r\nimport \"./Roles.sol\";\r\n\r\n// Define a contract 'RetailerRole' to manage this role - add, remove, check\r\ncontract RetailerRole {\r\n    using Roles for Roles.Role;\r\n\r\n  // Define 2 events, one for Adding, and other for Removing\r\n  event RetailerAdded(address indexed account);\r\n  event RetailerRemoved(address indexed account);\r\n  \r\n  // Define a struct 'retailers' by inheriting from 'Roles' library, struct Role\r\n  Roles.Role private retailers;\r\n\r\n  // In the constructor make the address that deploys this contract the 1st retailer\r\n  constructor() public {\r\n    _addRetailer(msg.sender);\r\n  }\r\n\r\n  // Define a modifier that checks to see if msg.sender has the appropriate role\r\n  modifier onlyRetailer() {\r\n    require(isRetailer(msg.sender), \"Not a retailer!\");\r\n    _;\r\n  }\r\n\r\n  // Define a function 'isRetailer' to check this role\r\n  function isRetailer(address account) public view returns (bool) {\r\n    return retailers.has(account);\r\n  }\r\n\r\n  // Define a function 'addRetailer' that adds this role\r\n  function addRetailer(address account) public onlyRetailer {\r\n    _addRetailer(account);\r\n  }\r\n\r\n  // Define a function 'renounceRetailer' to renounce this role\r\n  function renounceRetailer() public {\r\n    _removeRetailer(msg.sender);\r\n  }\r\n\r\n  // Define an internal function '_addRetailer' to add this role, called by 'addRetailer'\r\n  function _addRetailer(address account) internal {\r\n    retailers.add(account);\r\n    emit RetailerAdded(account);\r\n  }\r\n\r\n  // Define an internal function '_removeRetailer' to remove this role, called by 'removeRetailer'\r\n  function _removeRetailer(address account) internal {\r\n    retailers.remove(account);\r\n    emit RetailerRemoved(account);\r\n  }\r\n}",
-  "sourcePath": "C:\\Users\\Jaka\\Documents\\GitHub\\dapp-for-tracking-items-through-supply-chain\\contracts\\coffeeaccesscontrol\\RetailerRole.sol",
+  "sourcePath": "C:/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/RetailerRole.sol",
   "ast": {
     "absolutePath": "/C/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/RetailerRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "634:3:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1365,
+                              "referencedDeclaration": 629,
                               "src": "789:3:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -481,10 +481,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1368,
-                        1369
+                        632,
+                        633
                       ],
-                      "referencedDeclaration": 1369,
+                      "referencedDeclaration": 633,
                       "src": "770:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -843,7 +843,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "1287:3:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1609,7 +1609,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1692,10 +1692,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1368,
-                                1369
+                                632,
+                                633
                               ],
-                              "referencedDeclaration": 1369,
+                              "referencedDeclaration": 633,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1755,7 +1755,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1365,
+                                      "referencedDeclaration": 629,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2239,7 +2239,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2746,7 +2746,7 @@
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-09T07:52:06.566Z",
+  "updatedAt": "2021-04-09T12:59:17.923Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

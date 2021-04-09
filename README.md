@@ -4,14 +4,19 @@
 This is a part of **Udacity's Blockchain Developer Nanodegree** program. And is continuation of the following link : [starter code](https://github.com/udacity/nd1309-Project-6b-Example-Template)
 The contracts are deployed on Ethereum Rinkeby Testnet.
 
-## Get started
+## Getting started
 
-#### In order for this to run properly you need to have:
-* Metamask extension or other eth wallet installed in your web browser,
-* Nodejs at least v12.16.1 installed on your computer,
-* Truffle at least v5.2.4 installed on your computer
+### Prerequirements
+Before starting, here are some things you need:
+* `Node.js ^v12.16.1`, download and install it following [this link](https://nodejs.org/en/),
+* `Truffle ^v5.2.4`, open terminal and run `npm install -g truffle`,
+* One of this options: 
+    * `Metamask extension for chrome` installed in your chrome browser. [Link here](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) or
+    * `Metamask extension for firefox` installed in your firefoy browser. [Link here](https://addons.mozilla.org/sl/firefox/addon/ether-metamask/)
+    * If you use Brave browser no extension is needed.
+* Connect the wallet extension to Rinkeby Testnet
 
-#### Follow this steps to run the app on your local machine:
+### Installing:
 1. Open the terminal and run this commands:
 ```
 git clone https://github.com/JakaPresecnik/dapp-for-tracking-items-through-supply-chain.git
@@ -36,14 +41,7 @@ You should switch the network in your metamask to *rinkeby testnet*.
 However you won't be able to interact with anything else but one functionallity, unless I give you roles.
 *note:* The code in gh-pages branch is different than on master branch: the line 116 in App.js - where we are importing the contracts had to have a gh-pages entry added (/dapp-for-tracking-items-through-supply-chain), othervise it falls back to start.
 
-## UML diagrams
-In general smart contracts are built this way:
-![Activity Diagram](/images/activity-diagram.jpg)
-![Sequence Diagram](/images/sequence-diagram.jpg)
-![State Diagram](/images/state-diagram.jpg)
-![StatClass Diagram](/images/class-diagram.jpg)
-
-## Tests
+## Running Tests
 For testing contract run:
 ```
 truffle develop
@@ -51,6 +49,22 @@ test
 ```
 ![Test Screenshot](/images/tests.jpg)
 This is how it should look like :relaxed:
+
+## Built With
+* **truffle-hdwallet-provider** used in *truffle-config.js* in order to allow the deployment of contracts with Infura to testnet,
+* **web3** version 0.20.6 is imported in *index.html* as the website is a standalone
+* **lite-server** is used for development
+
+## UML diagrams
+In general smart contracts are built this way:
+* Activity Diagram:
+![Activity Diagram](/images/activity-diagram.jpg)
+* Sequence Diagram:
+![Sequence Diagram](/images/sequence-diagram.jpg)
+* State Diagram:
+![State Diagram](/images/state-diagram.jpg)
+* Class Diagram:
+![Class Diagram](/images/class-diagram.jpg)
 
 ## Smart Contracts
 The contracts are compiled with compiler version: 0.4.24, and are deployed on Ethereum Rinkeby Testnet:
@@ -61,11 +75,6 @@ The contracts are compiled with compiler version: 0.4.24, and are deployed on Et
 * SupplyChain contract: [0xD65d25cf04B6988118661F86512139E40035f7Fe](https://rinkeby.etherscan.io/address/0xD65d25cf04B6988118661F86512139E40035f7Fe)
 
 More informatiton about contracts you can find in *contracts-info-txt*. It is a copy of compiling logs and migrating logs to testnet.
-
-## Libraries
-* **truffle-hdwallet-provider** used in *truffle-config.js* in order to allow the deployment of contracts with Infura to testnet,
-* **web3** version 0.20.6 is imported in *index.html* as the website is a standalone
-* **lite-server** is used for development
 
 ## Changes made
 * Changed .watch() testing function as it has been changed in Web3 v1.

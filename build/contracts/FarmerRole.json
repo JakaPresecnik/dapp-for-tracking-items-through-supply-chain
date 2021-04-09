@@ -80,7 +80,7 @@
   "sourceMap": "160:1525:2:-;;;575:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;575:56:2;603:22;614:10;603;;;:22;;;:::i;:::-;160:1525;;1350:111;1403:20;1415:7;1403;:11;;;;;;:20;;;;;:::i;:::-;1447:7;1435:20;;;;;;;;;;;;1350:111;:::o;258:172:4:-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;;;:18;;;:::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;760:173::-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;160:1525:2:-;;;;;;;",
   "deployedSourceMap": "160:1525:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1031:86;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1031:86:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;1186:71;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1186:71:2;;;;;;867:102;;8:9:-1;5:2;;;30:1;27;20:12;5:2;867:102:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1031:86;756:20;765:10;756:8;:20::i;:::-;748:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1092:19;1103:7;1092:10;:19::i;:::-;1031:86;:::o;1186:71::-;1226:25;1240:10;1226:13;:25::i;:::-;1186:71::o;867:102::-;923:4;943:20;955:7;943;:11;;:20;;;;:::i;:::-;936:27;;867:102;;;:::o;1350:111::-;1403:20;1415:7;1403;:11;;:20;;;;:::i;:::-;1447:7;1435:20;;;;;;;;;;;;1350:111;:::o;1563:119::-;1619:23;1634:7;1619;:14;;:23;;;;:::i;:::-;1668:7;1654:22;;;;;;;;;;;;1563:119;:::o;760:173:4:-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;258:172::-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;:18::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;501:175::-;596:1;577:21;;:7;:21;;;;569:30;;;;;;;;614:18;618:4;624:7;614:3;:18::i;:::-;606:27;;;;;;;;665:5;642:4;:11;;:20;654:7;642:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;501:175;;:::o",
   "source": "pragma solidity ^0.4.24;\r\n\r\n// Import the library 'Roles'\r\nimport \"./Roles.sol\";\r\n\r\n// Define a contract 'FarmerRole' to manage this role - add, remove, check\r\ncontract FarmerRole {\r\n  using Roles for Roles.Role;\r\n\r\n  // Define 2 events, one for Adding, and other for Removing\r\n  event FarmerAdded(address indexed account);\r\n  event FarmerRemoved(address indexed account);\r\n\r\n  // Define a struct 'farmers' by inheriting from 'Roles' library, struct Role\r\n  Roles.Role private farmers;\r\n\r\n  // In the constructor make the address that deploys this contract the 1st farmer\r\n  constructor() public {\r\n    _addFarmer(msg.sender);\r\n  }\r\n\r\n  // Define a modifier that checks to see if msg.sender has the appropriate role\r\n  modifier onlyFarmer() {\r\n    require(isFarmer(msg.sender), 'Not a farmer');\r\n    _;\r\n  }\r\n\r\n  // Define a function 'isFarmer' to check this role\r\n  function isFarmer(address account) public view returns (bool) {\r\n    return farmers.has(account);\r\n  }\r\n\r\n  // Define a function 'addFarmer' that adds this role\r\n  function addFarmer(address account) public onlyFarmer {\r\n    _addFarmer(account);\r\n  }\r\n\r\n  // Define a function 'renounceFarmer' to renounce this role\r\n  function renounceFarmer() public {\r\n    _removeFarmer(msg.sender);\r\n  }\r\n\r\n  // Define an internal function '_addFarmer' to add this role, called by 'addFarmer'\r\n  function _addFarmer(address account) internal {\r\n    farmers.add(account);\r\n    emit FarmerAdded(account);\r\n  }\r\n\r\n  // Define an internal function '_removeFarmer' to remove this role, called by 'removeFarmer'\r\n  function _removeFarmer(address account) internal {\r\n    farmers.remove(account);\r\n    emit FarmerRemoved(account);\r\n  }\r\n}",
-  "sourcePath": "C:\\Users\\Jaka\\Documents\\GitHub\\dapp-for-tracking-items-through-supply-chain\\contracts\\coffeeaccesscontrol\\FarmerRole.sol",
+  "sourcePath": "C:/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/FarmerRole.sol",
   "ast": {
     "absolutePath": "/C/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/FarmerRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "614:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1365,
+                              "referencedDeclaration": 629,
                               "src": "765:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -481,10 +481,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1368,
-                        1369
+                        632,
+                        633
                       ],
-                      "referencedDeclaration": 1369,
+                      "referencedDeclaration": 633,
                       "src": "748:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -843,7 +843,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1365,
+                          "referencedDeclaration": 629,
                           "src": "1240:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1609,7 +1609,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1692,10 +1692,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1368,
-                                1369
+                                632,
+                                633
                               ],
-                              "referencedDeclaration": 1369,
+                              "referencedDeclaration": 633,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1755,7 +1755,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1365,
+                                      "referencedDeclaration": 629,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2239,7 +2239,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1365,
+                                  "referencedDeclaration": 629,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2746,7 +2746,7 @@
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-09T07:52:06.535Z",
+  "updatedAt": "2021-04-09T12:59:17.898Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
