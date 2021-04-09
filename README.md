@@ -17,7 +17,7 @@ The contracts are deployed on Ethereum Rinkeby Testnet.
 cd dapp-for-tracking-items-through-supply-chain
 npm install
 truffle develop
-´´´
+```
 2. You should see `truffle(develop)` running in the terminal. Run:
 ```compile
 migrate
