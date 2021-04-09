@@ -80,7 +80,7 @@
   "sourceMap": "162:1554:0:-;;;593:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;593:58:0;621:24;634:10;621:12;;;:24;;;:::i;:::-;162:1554;;1401:117;1456:22;1470:7;1456:9;:13;;;;;;:22;;;;;:::i;:::-;1504:7;1490:22;;;;;;;;;;;;1401:117;:::o;258:172:4:-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;;;:18;;;:::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;760:173::-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;162:1554:0:-;;;;;;;",
   "deployedSourceMap": "162:1554:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1066:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1066:92:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;1229:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1229:75:0;;;;;;896:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;896:106:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1066:92;778:22;789:10;778;:22::i;:::-;770:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1131:21;1144:7;1131:12;:21::i;:::-;1066:92;:::o;1229:75::-;1271:27;1287:10;1271:15;:27::i;:::-;1229:75::o;896:106::-;954:4;974:22;988:7;974:9;:13;;:22;;;;:::i;:::-;967:29;;896:106;;;:::o;1401:117::-;1456:22;1470:7;1456:9;:13;;:22;;;;:::i;:::-;1504:7;1490:22;;;;;;;;;;;;1401:117;:::o;1624:89::-;1682:25;1699:7;1682:9;:16;;:25;;;;:::i;:::-;1624:89;:::o;760:173:4:-;847:4;890:1;871:21;;:7;:21;;;;863:30;;;;;;;;907:4;:11;;:20;919:7;907:20;;;;;;;;;;;;;;;;;;;;;;;;;900:27;;760:173;;;;:::o;258:172::-;350:1;331:21;;:7;:21;;;;323:30;;;;;;;;369:18;373:4;379:7;369:3;:18::i;:::-;368:19;360:28;;;;;;;;420:4;397;:11;;:20;409:7;397:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;258:172;;:::o;501:175::-;596:1;577:21;;:7;:21;;;;569:30;;;;;;;;614:18;618:4;624:7;614:3;:18::i;:::-;606:27;;;;;;;;665:5;642:4;:11;;:20;654:7;642:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;501:175;;:::o",
   "source": "pragma solidity ^0.4.24;\r\n\r\n// Import the library 'Roles'\r\nimport \"./Roles.sol\";\r\n\r\n// Define a contract 'ConsumerRole' to manage this role - add, remove, check\r\ncontract ConsumerRole {\r\n    using Roles for Roles.Role;\r\n\r\n  // Define 2 events, one for Adding, and other for Removing\r\n  event ConsumerAdded(address indexed account);\r\n  event ConsumerRemoved(address indexed account);\r\n\r\n  // Define a struct 'consumers' by inheriting from 'Roles' library, struct Role\r\n  Roles.Role private consumers;\r\n  \r\n  // In the constructor make the address that deploys this contract the 1st consumer\r\n  constructor() public {\r\n    _addConsumer(msg.sender);\r\n  }\r\n\r\n  // Define a modifier that checks to see if msg.sender has the appropriate role\r\n  modifier onlyConsumer() {\r\n    require(isConsumer(msg.sender), \"Not a consumer!\");\r\n    _;\r\n  }\r\n\r\n  // Define a function 'isConsumer' to check this role\r\n  function isConsumer(address account) public view returns (bool) {\r\n    return consumers.has(account);\r\n  }\r\n\r\n  // Define a function 'addConsumer' that adds this role\r\n  function addConsumer(address account) public onlyConsumer {\r\n    _addConsumer(account);\r\n  }\r\n\r\n  // Define a function 'renounceConsumer' to renounce this role\r\n  function renounceConsumer() public {\r\n    _removeConsumer(msg.sender);\r\n  }\r\n\r\n  // Define an internal function '_addConsumer' to add this role, called by 'addConsumer'\r\n  function _addConsumer(address account) internal {\r\n    consumers.add(account);\r\n    emit ConsumerAdded(account);\r\n  }\r\n\r\n  // Define an internal function '_removeConsumer' to remove this role, called by 'removeConsumer'\r\n  function _removeConsumer(address account) internal {\r\n    consumers.remove(account);\r\n  }\r\n}",
-  "sourcePath": "C:/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/ConsumerRole.sol",
+  "sourcePath": "C:\\Users\\Jaka\\Documents\\GitHub\\dapp-for-tracking-items-through-supply-chain\\contracts\\coffeeaccesscontrol\\ConsumerRole.sol",
   "ast": {
     "absolutePath": "/C/Users/Jaka/Documents/GitHub/dapp-for-tracking-items-through-supply-chain/contracts/coffeeaccesscontrol/ConsumerRole.sol",
     "exportedSymbols": {
@@ -285,7 +285,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 520,
+                          "referencedDeclaration": 1365,
                           "src": "634:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -393,7 +393,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 520,
+                              "referencedDeclaration": 1365,
                               "src": "789:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -481,10 +481,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        523,
-                        524
+                        1368,
+                        1369
                       ],
-                      "referencedDeclaration": 524,
+                      "referencedDeclaration": 1369,
                       "src": "770:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -843,7 +843,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 520,
+                          "referencedDeclaration": 1365,
                           "src": "1287:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1555,7 +1555,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 520,
+                                  "referencedDeclaration": 1365,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1638,10 +1638,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                523,
-                                524
+                                1368,
+                                1369
                               ],
-                              "referencedDeclaration": 524,
+                              "referencedDeclaration": 1369,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1701,7 +1701,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 520,
+                                      "referencedDeclaration": 1365,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2185,7 +2185,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 520,
+                                  "referencedDeclaration": 1365,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2632,7 +2632,7 @@
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-08T14:42:55.780Z",
+  "updatedAt": "2021-04-09T07:52:06.586Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
