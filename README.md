@@ -16,12 +16,14 @@ The contracts are deployed on Ethereum Rinkeby Testnet.
 ```git clone https://github.com/JakaPresecnik/dapp-for-tracking-items-through-supply-chain.git
 cd dapp-for-tracking-items-through-supply-chain
 npm install
-truffle develop´´´
+truffle develop
+´´´
 2. You should see `truffle(develop)` running in the terminal. Run:
 ```compile
-migrate```
+migrate
+```
 3. Open another terminal and run this:
-```npm run dev```
+`npm run dev`
 When it is done the site should open up automatically, and metamask should open.
 
 ##### To run through browser:
