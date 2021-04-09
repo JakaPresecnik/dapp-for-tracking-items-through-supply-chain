@@ -13,17 +13,20 @@ The contracts are deployed on Ethereum Rinkeby Testnet.
 
 #### Follow this steps to run the app on your local machine:
 1. Open the terminal and run this commands:
-```git clone https://github.com/JakaPresecnik/dapp-for-tracking-items-through-supply-chain.git
+```
+git clone https://github.com/JakaPresecnik/dapp-for-tracking-items-through-supply-chain.git
 cd dapp-for-tracking-items-through-supply-chain
 npm install
 truffle develop
 ```
 2. You should see `truffle(develop)` running in the terminal. Run:
-```compile
+```
+compile
 migrate
 ```
 3. Open another terminal and run this:
-```npm run dev
+```
+npm run dev
 ```
 When it is done the site should open up automatically, and metamask should open.
 
@@ -38,10 +41,12 @@ In general smart contracts are built this way:
 ![Activity Diagram](/images/activity-diagram.jpg)
 ![Sequence Diagram](/images/sequence-diagram.jpg)
 ![State Diagram](/images/state-diagram.jpg)
+![StatClass Diagram](/images/class-diagram.jpg)
 
 ## Tests
 For testing contract run:
-```truffle develop
+```
+truffle develop
 test
 ```
 ![Test Screenshot](/images/tests.jpg)
